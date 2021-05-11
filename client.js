@@ -41,3 +41,38 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+function employeeBonus(employeeNumber, annualSalary, reviewRating) {
+let bonus = 0
+
+if(reviewRating === 5) {
+  //give 10% bonus of their base salary
+  bonus = annualSalary * .1;
+} else if(reviewRating === 4) {
+  //give 6% bonus of their base salary
+  bonus = annualSalary * .06;
+} else if(reviewRating === 3) {
+  //give 4% bonus of their base salary
+  bonus = annualSalary * .04;
+} else {
+  //give 0% bonus of their base salary - do nothing
+} //end base bonus additions
+
+if(employeeNumber.length < 5 && annualSalary <= 65000) {
+  //give an additional 5% of their base salary
+  bonus = annualSalary * .05 + bonus;
+}
+
+if(bonus > annualSalary * .13) {
+  //bonus === 13%
+  bonus = annualSalary * .13;
+}
+return bonus;
+}// end employeeBonus
+
+console.log('running employeeBonus function with 1 employees info', employeeBonus('62347', '63500', 4));
+
+//**************************** */
+/* showEmployeeStats function
+  - let employeeProperty = 
+*/
