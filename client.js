@@ -82,15 +82,18 @@ function employeeReview(employeeArray) {
   console.log(employeeArray);
 
   for (let i = 0; i < employeeArray.length; i++) {
-
-    let employeeObject = employeeArray[i];
-    let name = employeeObject.name;
-    let bonusPercentage = employeeObject.bonusPercentage;
-    let totalCompensation = employeeObject.totalCompensation;
-    let totalBonus = employeeObject.totalBonus;
-
+    employeeBonus(employeeArray) {
+      let employeeObject = employeeArray[i];
+      let name = employeeObject.name;
+      let bonusPercentage = employeeObject.bonusPercentage;
+      let totalCompensation = employeeObject.totalCompensation;
+      let totalBonus = employeeObject.totalBonus;
+    }    
+  return employeeObject;
   }
-}
+  
+console.log('running employeeReview', employeeReview(employees));
+
 
 /*
 ***************************************************
@@ -120,4 +123,4 @@ console.log('all matching penguins', match);
 
 
 */
-
+}
