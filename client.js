@@ -43,36 +43,76 @@ const employees = [
 console.log( employees );
 
 function employeeBonus(employeeNumber, annualSalary, reviewRating) {
-let bonus = 0
+let bonusPercent = 0
 
 if(reviewRating === 5) {
   //give 10% bonus of their base salary
-  bonus = annualSalary * .1;
+  bonusPercent = 10;
 } else if(reviewRating === 4) {
   //give 6% bonus of their base salary
-  bonus = annualSalary * .06;
+  bonusPercent = 6;
 } else if(reviewRating === 3) {
   //give 4% bonus of their base salary
-  bonus = annualSalary * .04;
+  bonusPercent = 4;
 } else {
   //give 0% bonus of their base salary - do nothing
 } //end base bonus additions
 
 if(employeeNumber.length < 5 && annualSalary <= 65000) {
   //give an additional 5% of their base salary
-  bonus = annualSalary * .05 + bonus;
+  bonusPercent = bonusPercent - 1;
 }
 
-if(bonus > annualSalary * .13) {
+if(bonusPercent > 13) {
   //bonus === 13%
-  bonus = annualSalary * .13;
+  bonusPercent = 13;
 }
-return bonus;
+return bonusPercent;
 }// end employeeBonus
 
 console.log('running employeeBonus function with 1 employees info', employeeBonus('62347', '63500', 4));
 
+function employeeReview(employeeArray){
+  console.log(employeeArray);
+  
+  for (let i=0; i< employeeArray.length; i++){
+    
+    let employeeObject = employeeArray[i];
+    let name = employeeArray.name;
+    let bonusPercentage = employeeArray.bonusPercentage;
+    let totalCompensation = employeeArray.totalCompensation;
+    let totalBonus = employeeArray.totalBonus;
+}
+
+}
+
 //**************************** */
 /* showEmployeeStats function
-  - let employeeProperty = 
+  
+
+function showCollection(albumCollection) {
+  console.log(`Number of Albums in the collection --> `, albumCollection.length);
+
+  for (let i = 0; i < albumCollection.length; i++) {
+
+    let albumObject = albumCollection[i];
+    let title = albumObject.title;
+    let artist = albumObject.artist;
+    let yearPublished = albumObject.yearPublished;
+
+    console.log(`${title} by ${artist}, published in ${yearPublished}`);
+  }//End loop
+}//End showCollection
+
+
+looping Array
+const hats = ['beanie', 'fedora', 'sombrero', 'cowboy'];
+//write a loop to print each hat in the console
+for(let i = 0; i < hats.length; i++) {
+  console.log(hats[i]);
+}
+
+
+
 */
+
