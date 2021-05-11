@@ -70,10 +70,10 @@ function employeeBonus(employeeNumber, annualSalary, reviewRating) {
     bonusPercent = 13;
   }
 
-bonusAmount= annualSalary * (bonusPercent / 100);
-compensation = annualSalary + (bonusPercent / 100); 
+  bonusAmount = annualSalary * (bonusPercent / 100);
+  compensation = annualSalary * (1 - (bonusPercent/100));
 
-  return { bonusPercentage: bonusPercent, totalCompensation: compensation, totalBonus: bonusAmount,}
+  return { bonusPercentage: bonusPercent, totalCompensation: compensation, totalBonus: bonusAmount, }
 }// end employeeBonus
 
 console.log('running employeeBonus function with 1 employees info', employeeBonus('62347', '63500', 4));
