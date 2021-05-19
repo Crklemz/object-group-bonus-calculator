@@ -44,23 +44,23 @@ let bonusPercent = 0
 let compensation = 0
 let bonusAmount = 0
 
-if (employees.reviewRating === 5) {
+if (employee.reviewRating === 5) {
   //give 10% bonus of their base salary
   bonusPercent = 10;
-} else if (employees.reviewRating === 4) {
+} else if (employee.reviewRating === 4) {
   //give 6% bonus of their base salary
   bonusPercent = 6;
-} else if (employees.reviewRating === 3) {
+} else if (employee.reviewRating === 3) {
   //give 4% bonus of their base salary
   bonusPercent = 4;
 } else {
-  //give 0% bonus of their base salary - do nothing
+  bonusPercent = 0;
 } //end base bonus additions
 
 console.log('in employeeBonus - bonusPercent is', bonusPercent);
 
 
-if (employees.employeeNumber < 5) {
+if ((employee.employeeNumber).length === 4) {
   bonusPercent += 5
 }
 
@@ -73,9 +73,9 @@ if (bonusPercent > 13) {
   bonusPercent = 13;
 }
 
-bonusAmount = employees.annualSalary * (bonusPercent / 100);
+bonusAmount = employee.annualSalary * (bonusPercent / 100);
 
-compensation = employees.annualSalary * (1 + (bonusPercent / 100));
+compensation = employee.annualSalary * (1 + (bonusPercent / 100));
 
 return {
   bonusPercentage: bonusPercent,
